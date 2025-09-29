@@ -1,0 +1,559 @@
+/* Variáveis de Cores */
+:root {
+    --brand-brown: #4a2c1a;   /* Principal (Marrom Escuro) */
+    --brand-gold: #9b672a;    /* Secundária/Dourado */
+    --brand-light: #e0d1b6;   /* Texto claro/Fundo suave */
+    --brand-dark-bg: #6b4f3f; /* Fundo de Seções (Marrom Médio) */
+    --text-white: #ffffff;
+    --text-dark: #4a2c1a;
+}
+
+/* Base e Tipografia */
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--brand-light);
+    background-color: var(--brand-dark-bg);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.container {
+    max-width: 1280px; /* max-w-7xl */
+    margin: 0 auto;
+    padding-left: 1rem; /* px-4 */
+    padding-right: 1rem; /* px-4 */
+}
+
+/* Botões Padrão */
+.btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background-color: var(--brand-gold);
+    color: var(--brand-brown);
+    border-radius: 9999px; /* rounded-full */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    transition: all 300ms ease;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--brand-brown);
+    color: var(--text-white);
+    transform: scale(1.05);
+}
+
+/* --- CABEÇALHO --- */
+.cabecalho {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: rgba(74, 44, 26, 0.95); /* brand-brown com transparência */
+    backdrop-filter: blur(5px);
+}
+
+.cabecalho > .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+    flex-shrink: 0;
+}
+
+/* Menu Desktop */
+.menu-desktop {
+    display: none;
+    gap: 2rem;
+}
+
+.menu-desktop a {
+    color: var(--text-white);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 300ms ease;
+}
+
+.menu-desktop a:hover {
+    color: var(--brand-gold);
+}
+
+/* Botão Mobile */
+.menu-button {
+    display: block;
+    color: var(--text-white);
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+    outline: none;
+}
+
+.menu-button svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Menu Dropdown Mobile */
+#mobile-menu {
+    display: none;
+    background-color: var(--brand-brown);
+    padding: 0.5rem 0;
+    text-align: center;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    z-index: 40;
+}
+
+#mobile-menu a {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-white);
+    text-decoration: none;
+}
+
+#mobile-menu a:hover {
+    background-color: var(--brand-dark-bg);
+}
+
+/* Media Query para Desktop */
+@media (min-width: 768px) {
+    .menu-desktop {
+        display: flex;
+    }
+    .menu-button {
+        display: none;
+    }
+    .logo img {
+        height: 56px;
+    }
+}
+
+/* --- SEÇÃO CARROSSEL (HERO/INÍCIO) --- */
+.carousel-container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    height: 100%;
+}
+
+.carousel-slide {
+    flex: 0 0 100%;
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.65);
+    z-index: 10;
+}
+
+.conteudo-principal {
+    position: relative;
+    z-index: 20;
+    padding: 1.5rem;
+    max-width: 896px;
+}
+
+.conteudo-principal h1 {
+    font-size: 2.25rem;
+    color: var(--text-white);
+    margin-bottom: 1rem;
+}
+
+.conteudo-principal p {
+    font-size: 1.25rem;
+    color: var(--brand-light);
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 640px) {
+    .conteudo-principal h1 {
+        font-size: 4rem;
+    }
+    .conteudo-principal p {
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .conteudo-principal h1 {
+        font-size: 4.5rem;
+    }
+}
+
+/* Botões e Dots ocultos para o carrossel de 1 slide */
+.carousel-button, .carousel-dots {
+    display: none;
+}
+
+
+/* --- SEÇÕES GERAIS --- */
+.secao {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    /* Certifica-se de que todas as seções por padrão ocupam a largura total */
+    width: 100%; 
+    box-sizing: border-box; /* Garante que padding não estoure a largura */
+}
+
+@media (min-width: 768px) {
+    .secao {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+}
+
+.secao h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+/* Seção Produtos */
+#produtos h2 {
+    color: var(--brand-gold);
+    border-bottom: 2px solid var(--brand-gold);
+}
+
+.produtos-container {
+    text-align: center;
+}
+
+.produtos-container > p {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Wrapper para forçar a rolagem horizontal dos produtos em mobile/tablet (CARROSSEL DE PRODUTOS) */
+.carousel-products-wrapper {
+    overflow-x: auto; /* Permite rolagem horizontal */
+    scroll-snap-type: x mandatory; /* Efeito de carrossel para forçar o alinhamento */
+    padding-bottom: 1rem;
+    /* Esses ajustes garantem que o carrossel ignore o padding do .container em mobile */
+    margin-left: -1rem; 
+    margin-right: -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* Estilo da barra de rolagem customizada (Webkit) */
+.carousel-products-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+.carousel-products-wrapper::-webkit-scrollbar-thumb {
+    background-color: var(--brand-gold);
+    border-radius: 10px;
+}
+.carousel-products-wrapper::-webkit-scrollbar-track {
+    background-color: var(--brand-brown);
+}
+
+.grid-produtos {
+    display: flex; /* Força os itens a ficarem lado a lado para rolagem */
+    gap: 2rem;
+    width: fit-content; /* Permite que o conteúdo interno determine a largura total */
+}
+
+/* Estilos de Card de Produto no Modo Carrossel (Mobile/Tablet) */
+.card-produto {
+    background-color: var(--brand-brown);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transition: all 500ms ease;
+    cursor: pointer;
+    flex-shrink: 0; /* Impede que o card encolha */
+    width: 280px; /* Largura fixa para cada item no carrossel mobile */
+    scroll-snap-align: start; /* Alinha o início do card no ponto de parada */
+}
+
+.card-produto:hover {
+    transform: scale(1.03);
+}
+
+/* Media Query para Desktop (Retorna ao Grid padrão) */
+@media (min-width: 768px) {
+    .carousel-products-wrapper {
+        overflow-x: visible; /* Remove rolagem horizontal no desktop */
+        scroll-snap-type: none;
+        margin: 0; /* Remove ajustes de margem */
+        padding: 0;
+    }
+    .carousel-products-wrapper::-webkit-scrollbar {
+        height: 0;
+    }
+    .grid-produtos {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* Quatro colunas no desktop */
+        width: 100%;
+    }
+    .card-produto {
+        width: auto; /* Deixa a largura fluida no grid */
+    }
+}
+
+
+.card-produto img {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 1rem;
+    border-radius: 9999px;
+    border: 4px solid var(--brand-gold);
+}
+
+.card-produto h3 {
+    font-size: 1.5rem;
+    color: var(--text-white);
+    margin-bottom: 0.5rem;
+}
+
+.card-produto a {
+    color: var(--brand-gold);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.card-produto a:hover {
+    text-decoration: underline;
+}
+
+/* Botão principal após grid de produtos */
+.btn-pedido-produtos {
+    margin-top: 3rem;
+    padding: 0.75rem 2rem;
+    background-color: var(--brand-gold);
+    color: var(--brand-brown);
+    font-weight: bold;
+    border-radius: 9999px;
+    transition: background-color 300ms ease;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.btn-pedido-produtos:hover {
+    background-color: rgba(155, 103, 42, 0.8);
+}
+
+/* --- SEÇÃO QUEM SOMOS --- */
+#quemsomos {
+    background-color: var(--brand-light);
+    color: var(--brand-brown);
+    /* O background color é o que dá a impressão de ponta a ponta. 
+       O conteúdo de texto ainda está centralizado pelo uso de um contêiner dentro da seção (não mostrado aqui, mas padrão para todas as seções). */
+}
+
+#quemsomos h2 {
+    color: var(--brand-brown);
+    border-bottom: 2px solid var(--brand-brown);
+    text-align: center;
+    margin: 0 auto 3rem;
+}
+
+.conteudo-quem-somos {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .conteudo-quem-somos {
+        flex-direction: row;
+    }
+}
+
+.texto-quem-somos, .missoes-valores-container {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .texto-quem-somos, .missoes-valores-container {
+        width: 50%;
+    }
+}
+
+.imagem-equipe {
+    margin-top: 3px;
+    height: 450px;
+    width: 500px;
+}
+
+.missoes-valores-container {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.valor-card {
+    padding: 1.5rem;
+    background-color: rgba(74, 44, 26, 0.1);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid transparent; /* Adiciona borda transparente para transição */
+    transition: all 400ms ease; /* Adiciona transição para hover */
+}
+
+.valor-card:hover {
+    border-color: var(--brand-gold); /* Mudar cor da borda ao passar o mouse */
+    transform: translateY(-3px); /* Leve levantamento */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Sombra mais forte */
+}
+
+.valor-card h3 {
+    font-size: 1.25rem;
+    color: var(--brand-gold);
+    margin-bottom: 0.5rem;
+}
+
+.texto-quem-somos p {
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+}
+
+/* --- SEÇÃO ENCOMENDAS E FEEDBACK (FORMULÁRIOS) --- */
+.secao-formulario {
+    background-color: var(--brand-dark-bg);
+    padding: 4rem 0;
+}
+
+.secao-formulario .container {
+    max-width: 576px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.formulario {
+    background-color: var(--brand-brown);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.formulario label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--brand-light);
+    margin-bottom: 0.25rem;
+}
+
+.formulario input[type="text"],
+.formulario input[type="tel"],
+.formulario textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    border: none;
+    color: var(--brand-brown);
+    outline: none;
+}
+
+.formulario input:focus,
+.formulario textarea:focus {
+    box-shadow: 0 0 0 2px var(--brand-gold);
+}
+
+.formulario button[type="submit"] {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1.125rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: var(--brand-gold);
+    color: var(--brand-brown);
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 300ms ease;
+    cursor: pointer;
+    border: none;
+}
+
+.formulario button[type="submit"]:hover {
+    background-color: rgba(155, 103, 42, 0.8);
+}
+
+/* --- SEÇÃO LOCALIZAÇÃO / MAPA --- */
+#localizacao {
+    background-color: var(--brand-gold);
+    color: var(--brand-brown);
+}
+
+#localizacao h2 {
+    color: var(--brand-brown);
+    border-bottom: 2px solid var(--brand-brown);
+}
+
+/* Contêiner do Mapa Responsivo */
+.map-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Proporção 16:9 */
+    height: 0;
+    overflow: hidden;
+    max-width: 896px;
+    margin: 0 auto 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* --- FOOTER --- */
+.rodape {
+    background-color: var(--brand-brown);
+    text-align: center;
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(155, 103, 42, 0.5);
+    color: var(--brand-light);
+    font-size: 1rem;
+}
+
+.rodape p:last-child {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+}
