@@ -10,24 +10,54 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (menuButton && mobileMenu) {
         menuButton.addEventListener('click', () => {
-            // Alterna a visibilidade do menu
-            const isHidden = mobileMenu.style.display === 'none' || mobileMenu.style.display === '';
-            mobileMenu.style.display = isHidden ? 'block' : 'none';
+            mobileMenu.classList.toggle('is-open');
         });
 
-        // Fechar menu ao clicar em um link (para navegação em SPA)
         mobileMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
-                mobileMenu.style.display = 'none';
+                mobileMenu.classList.remove('is-open');
             });
         });
     }
 
-    // 2. Lógica do Carrossel Principal (#inicio)
-    // Foi desabilitada porque o carrossel principal tem apenas 1 slide,
-    // tornando desnecessária a lógica de navegação.
-    
-    // 3. O Carrossel de Produtos na seção #produtos é controlado
-    // inteiramente pelo CSS (propriedades 'overflow-x' e 'scroll-snap-type')
-    // e, portanto, não requer lógica adicional em JavaScript.
+    // --- NOVO CÓDIGO PARA O FORMULÁRIO DE ENCOMENDA ---
+
+    // 2. Lógica do Formulário de Encomendas para WhatsApp
+    const formEncomenda = document.getElementById('form-encomenda');
+
+    if (formEncomenda) {
+        formEncomenda.addEventListener('submit', function(event) {
+            // Impede que o formulário seja enviado da forma tradicional
+            event.preventDefault();
+
+            // Coloque aqui o seu número de WhatsApp no formato internacional
+            const numeroTelefone = '5511999998888'; // Exemplo: +55 (11) 99999-8888
+
+            // Pega os valores dos campos do formulário
+            const nome = document.getElementById('nome').value;
+            const telefone = document.getElementById('telefone').value;
+            const observacao = document.getElementById('observacao').value;
+
+            // Monta a mensagem que será enviada
+            const mensagem = `Olá! Gostaria de fazer uma encomenda
+
+Nome: ${nome}
+Telefone: ${telefone}
+
+Pedido/Observação:
+${observacao}
+
+Agradeço o contato!`;
+
+            // Codifica a mensagem para ser usada em uma URL
+            const mensagemCodificada = encodeURIComponent(mensagem);
+
+            // Cria o link final para o WhatsApp
+            const linkWhatsApp = `https://wa.me/18996993086
+?text=${mensagemCodificada}`;
+
+            // Abre o link em uma nova aba
+            window.open(linkWhatsApp, '_blank');
+        });
+    }
 });
