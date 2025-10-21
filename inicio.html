@@ -10,27 +10,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+    <!-- O link para os ícones foi movido para cá para melhor organização -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 <body>
 
     <header class="cabecalho">
         <div class="container">
             <div class="logo">
-                <a href="#inicio">
+                <a href="inicio.html">
                     <img src="Imagens/LOGO_ESCRITA-removebg-preview.png" alt="Doce Dourado Logo">
                 </a>
             </div>
             
             <nav class="menu-desktop">
+                <!-- O botão do WhatsApp foi removido daqui -->
                 <a href="https://www.instagram.com/doce.dourado.oficial?igsh=MW02MWRyZ2o0bjNrcQ%3D%3D&utm_source=qr" target="_blank" class="icone-insta">
                     <img src="Imagens/logo_insta.png" alt="Instagram">
                 </a>
-                <a href="inicio.html">Início</a>
-                <a href="produtos.html">Produtos</a>
-                <a href="encomendas.html">Encomendas</a>
-                <a href="localizacao.html">Localização</a>
-                <a href="quemsomos.html">Quem Somos</a>
-                <a href="feedback.html">Feedback</a>
+                <a href="#inicio">Início</a>
+                <a href="#produtos">Produtos</a>
+                <a href="#quemsomos">Quem Somos</a>
+                <a href="#encomendas">Encomendas</a>
+                <a href="#localizacao">Localização</a>
+                <a href="#feedback">Feedback</a>
             </nav>
             
             <button id="menu-button" class="menu-button">
@@ -39,12 +42,12 @@
         </div>
 
         <nav id="mobile-menu" class="mobile-menu">
-            <a href="inicio.html">Início</a>
-            <a href="produtos.html">Produtos</a>
-            <a href="encomendas.html">Encomendas</a>
-            <a href="localizacao.html">Localização</a>
-            <a href="quemsomos.html">Quem Somos</a>
-            <a href="feedback.html">Feedback</a>
+            <a href="#inicio">Início</a>
+            <a href="#produtos">Produtos</a>
+            <a href="#quemsomos">Quem Somos</a>
+            <a href="#encomendas">Encomendas</a>
+            <a href="#localizacao">Localização</a>
+            <a href="#feedback">Feedback</a>
         </nav>
     </header>
 
@@ -60,8 +63,154 @@
             </div>
         </div>
     </section>
-
     
+    <section id="produtos" class="secao produtos-container">
+        <div class="container">
+            <h2 class="text-center">Nosso Produto</h2>
+            <p class="text-center" style="max-width: 800px; margin-left: auto; margin-right: auto;">
+                Arraste para o lado e experimente a nossa linha exclusiva de Pães de Mel e Doces Dourados. Qualidade e sabor inesquecíveis em cada mordida.
+            </p>
+
+            <div class="carousel-and-button-wrapper">
+                <div class="carousel-products-wrapper">
+                    <div class="grid-produtos">
+                        <a href="#encomendas" class="card-link">
+                            <div class="card-produto">
+                                <img src="Imagens/captura-de-tela-2024-02-19-135533-gj8dmmzejz.webp" alt="Pão de Mel Tradicional">
+                            </div>
+                        </a>
+                        <a href="#encomendas" class="card-link">
+                            <div class="card-produto">
+                                <img src="Imagens/captura-de-tela-2024-02-19-135533-gj8dmmzejz.webp" alt="Pão de Mel com Chocolate Branco">
+                            </div>
+                        </a>
+                        <a href="#encomendas" class="card-link">
+                            <div class="card-produto">
+                                <img src="Imagens/captura-de-tela-2024-02-19-135533-gj8dmmzejz.webp" alt="Pão de Mel com Nozes">
+                            </div>
+                        </a>
+                        <a href="#encomendas" class="card-link">
+                            <div class="card-produto">
+                                <img src="Imagens/captura-de-tela-2024-02-19-135533-gj8dmmzejz.webp" alt="Pão de Mel Sabor Café">
+                            </div>
+                        </a>
+                        <a href="#encomendas" class="card-link">
+                            <div class="card-produto">
+                                <img src="Imagens/captura-de-tela-2024-02-19-135533-gj8dmmzejz.webp" alt="Outro Sabor Especial">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <br>
+                <a href="encomendas.html" class="btn btn-faca-pedido">FAÇA SEU PEDIDO!</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="quemsomos" class="secao">
+        <div class="container">
+            <h2 class="text-center">Nossa Equipe</h2>
+            <div class="equipe-grid">
+                <div class="membro-card">
+                    <img src="Imagens/membros/foto-membro-1.jpeg" alt="Foto de membro" class="foto-membro">
+                    <h3>Giovanna Souza</h3>
+                </div>
+                <div class="membro-card">
+                    <img src="Imagens/membros/foto-membro-2.jpeg" alt="Foto de membro" class="foto-membro">
+                    <h3>Murilo Carriel</h3>
+                </div>
+                <div class="membro-card">
+                    <img src="Imagens/membros/foto-membro-3.jpeg" alt="Foto de Andrew Andrade" class="foto-membro">
+                    <h3>Andrew Andrade</h3>
+                </div>
+                <div class="membro-card">
+                    <img src="Imagens/membros/foto-membro-4.jpeg" alt="Foto de membro" class="foto-membro">
+                    <h3>João Pedro Morais</h3>
+                </div>
+                <div class="membro-card">
+                    <img src="Imagens/membros/foto-membro-5.jpeg" alt="Foto de membro" class="foto-membro">
+                    <h3>Ana Júlia Bulhoes</h3>
+                </div>
+            </div>
+            
+            <div class="quem-somos-wrapper">
+                <div class="texto-quem-somos">
+                    <p>Na <strong>Doce Dourado</strong>, acreditamos que cada mordida deve ser uma experiência única de <strong>carinho</strong> e <strong>sabor</strong>. Somos especializados na produção de pães de mel artesanais, recheados com o melhor doce de leite mineiro, que trazem a autêntica sensação de estar em Minas em cada pedaço. Fundada em 2025, nossa empresa nasceu com a missão de espalhar amor e tradição, levando a doçura de Minas Gerais para cada mesa e criando momentos inesquecíveis.</p>
+                </div>
+                <div class="missoes-valores-container">
+                    <div class="valor-card">
+                        <h3>Missão</h3>
+                        <p>Levar alegria e afeto através de doces artesanais, com foco em ingredientes naturais e preparo dedicado.</p>
+                    </div>
+                    <div class="valor-card">
+                        <h3>Visão</h3>
+                        <p>Tornar-se a marca de Pão de Mel mais querida e reconhecida pela qualidade no mercado regional até 2028.</p>
+                    </div>
+                    <div class="valor-card">
+                        <h3>Valores</h3>
+                        <p>Qualidade, Artesanato, Respeito ao Cliente e Sustentabilidade.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="encomendas" class="secao-formulario">
+        <div class="container">
+            <h2 class="text-center" style="color: var(--brand-gold); border-bottom-color: var(--brand-gold);">Faça Sua Encomenda</h2>
+            
+            <form id="form-encomenda" class="formulario">
+                
+                <div>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                
+                <div>
+                    <label for="telefone">Telefone (Whatsapp):</label>
+                    <input type="tel" id="telefone" name="telefone" required>
+                </div>
+
+                <div>
+                    <label for="observacao">Observação do pedido e quantidade:</label>
+                    <textarea id="observacao" name="observacao" rows="4"></textarea>
+                </div>
+
+                <button type="submit">
+                    ENVIAR PEDIDO
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <section id="localizacao" class="secao" style="background-color: var(--brand-gold); color: var(--brand-brown);">
+        <div class="container text-center">
+            <h2>Onde Nos Encontrar</h2>
+            <p style="font-size: 1.25rem; margin-bottom: 2rem;">Visite nossa cozinha para retirada ou desfrute de nosso serviço de atendimento!</p>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3096.2794207332117!2d-50.4393575494318!3d-22.649406668313425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94953bdbb97c3ac5%3A0xd61f79976838c175!2sUnesp%20-%20Faculdade%20de%20Ci%C3%AAncias%20e%20Letras%20(FCLAs)!5e0!3m2!1spt-BR!2sbr!4v1759113346404!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Nossa localização na Unesp Assis"></iframe>
+            </div>
+            <p style="font-size: 1.125rem; font-weight: 600;">Av. Dom Antônio, 2100 - Parque Universitario, Assis - SP</p>
+            <p style="font-size: 1.125rem; font-weight: 600;">Horário de Funcionamento: </p>
+        </div>
+    </section>
+
+    <section id="feedback" class="secao-formulario">
+        <div class="container">
+            <h2 class="text-center" style="color: var(--brand-gold); border-bottom-color: var(--brand-gold);">Deixe seu Feedback</h2>
+            <form action="#" class="formulario">
+                <div>
+                    <label for="nome-feedback">Nome (opcional):</label>
+                    <input type="text" id="nome-feedback" name="nome-feedback">
+                </div>
+                <div>
+                    <label for="seu-feedback">Sua Opinião:</label>
+                    <textarea id="seu-feedback" name="seu-feedback" rows="4" required></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </section>
 
     <footer class="rodape">
         <div class="container">
@@ -70,7 +219,17 @@
             <p>Feito com paixão em Assis, SP.</p>
         </div>
     </footer>
-
+    
     <script src="script.js"></script>
+
+    <!-- O botão foi movido para cá, para fora do cabeçalho, garantindo o posicionamento correto -->
+    <a 
+        href="https://wa.me/18996993086" 
+        class="whatsapp-flutuante" 
+        target="_blank"
+        aria-label="Fale conosco pelo WhatsApp"
+    >
+        <i class="fa fa-whatsapp"></i>
+    </a>
 </body>
 </html>

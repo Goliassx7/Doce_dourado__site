@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const observacao = document.getElementById('observacao').value;
 
             // Monta a mensagem que será enviada
-            const mensagem = `Olá! Gostaria de fazer uma encomenda
+            const mensagem = `Olá! Vim pelo site e gostaria de fazer uma encomenda
 
 Nome: ${nome}
 Telefone: ${telefone}

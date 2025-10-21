@@ -87,6 +87,52 @@ h2 {
     width: auto;
 }
 
+/* --- BOTÃO WHATSAPP FLUTUANTE (CORRIGIDO) --- */
+.whatsapp-flutuante {
+  /* 1. POSICIONAMENTO E FIXAÇÃO */
+  position: fixed;
+  bottom: 40px; 
+  right: 40px; 
+  z-index: 1000; /* Garante que fique por cima de outros elementos */
+  
+  /* 2. FORMA E TAMANHO */
+  width: 60px; 
+  height: 60px; 
+  border-radius: 50%; 
+  
+  /* 3. ESTILO VISUAL */
+  background-color: #25d366; 
+  color: #FFF; 
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4); 
+  text-decoration: none;
+  
+  /* 4. CENTRALIZAÇÃO PERFEITA DO ÍCONE (com Flexbox) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px; 
+
+  /* 5. TRANSIÇÃO SUAVE */
+  transition: background-color 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+.whatsapp-flutuante:hover {
+  background-color: #1FAF59; 
+}
+
+/* Ajustes para telas menores (celulares) */
+@media (max-width: 600px) {
+  .whatsapp-flutuante {
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+  }
+}
+
+
 /* Menu Desktop */
 .menu-desktop {
     display: none;
@@ -285,8 +331,6 @@ h2 {
     border-radius: 0.5rem;
     border: 4px solid var(--brand-gold);
 }
-
-/* O bloco de media query que alinhava em 'row' foi REMOVIDO */
 
 /* --- QUEM SOMOS --- */
 #quemsomos {
