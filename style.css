@@ -96,14 +96,14 @@ h2 {
   z-index: 1000; /* Garante que fique por cima de outros elementos */
   
   /* 2. FORMA E TAMANHO */
-  width: 60px; 
-  height: 60px; 
+  width: 70px; 
+  height: 70px; 
   border-radius: 50%; 
   
   /* 3. ESTILO VISUAL */
   background-color: #25d366; 
   color: #FFF; 
-  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4); 
+  box-shadow: 4px 2px 3px rgba(0, 0, 0, 0.4); 
   text-decoration: none;
   
   /* 4. CENTRALIZAÇÃO PERFEITA DO ÍCONE (com Flexbox) */
@@ -126,8 +126,8 @@ h2 {
   .whatsapp-flutuante {
     bottom: 20px;
     right: 20px;
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
     font-size: 25px;
   }
 }
