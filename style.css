@@ -1,27 +1,47 @@
 /* Variáveis de Cores */
 :root {
+    /* Tema Escuro (Padrão) */
     --brand-brown: #4a2c1a;
     --brand-gold: #9b672a;
     --brand-light: #e0d1b6;
     --brand-dark-bg: #6b4f3f;
     --text-white: #ffffff;
     --text-dark: #4a2c1a;
+    --card-bg: #4a2c1a; /* Fundo do card no tema escuro */
+    --card-text: #e0d1b6; /* Texto do card no tema escuro */
+    --heading-color: #e0d1b6; /* Cor dos títulos h2, h3 */
+    --border-color: #9b672a; /* Cor da borda (produtos, etc) */
 }
 
-/* Base e Tipografia Fluida */
+/* ============================================= */
+/* NOVO TEMA CLARO (COM CORES DA PALETA)   */
+/* ============================================= */
+body.light-mode {
+    --brand-dark-bg: #e0d1b6; /* Fundo principal (bege claro da paleta) */
+    --card-bg: #fdfaf5; /* Fundo dos cards (creme muito claro) */
+    --card-text: #4a2c1a; /* Texto (marrom escuro) */
+    --heading-color: #4a2c1a; /* Títulos (marrom escuro) */
+    --border-color: #9b672a;
+}
+/* ============================================= */
+
+
+/* Base e Tipografia Fluida (Atualizado para usar variáveis) */
 body {
     font-family: 'Inter', sans-serif;
-    color: var(--brand-light);
-    background-color: var(--brand-dark-bg);
+    color: var(--card-text); /* Alterado */
+    background-color: var(--brand-dark-bg); /* Alterado */
     margin: 0;
     padding: 0;
     line-height: 1.6;
     font-size: clamp(14px, 1vw, 16px);
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave */
 }
 
 h1, h2, h3 {
     font-weight: 700;
     line-height: 1.2;
+    color: var(--heading-color); /* Alterado */
 }
 
 h1 {
@@ -30,6 +50,11 @@ h1 {
 
 h2 {
     font-size: clamp(1.8rem, 4vw, 2.25rem);
+}
+
+h3 {
+    /* Garante que h3 também mude de cor */
+    color: var(--heading-color); 
 }
 
 .container {
@@ -42,7 +67,7 @@ h2 {
     text-align: center;
 }
 
-/* Botões */
+/* Botões (O seu código original) */
 .btn {
     display: inline-block;
     padding: 1rem 2.5rem;
@@ -73,7 +98,14 @@ h2 {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     background-color: rgba(74, 44, 26, 0.95);
     backdrop-filter: blur(5px);
+    transition: background-color 0.3s ease;
 }
+/* Mudança no modo claro */
+body.light-mode .cabecalho {
+    /* Agora usa o tom creme claro para o cabeçalho */
+    background-color: rgba(253, 250, 245, 0.95); /* #fdfaf5 com transparência */
+}
+
 
 .cabecalho > .container {
     display: flex;
@@ -82,46 +114,75 @@ h2 {
     height: 80px;
 }
 
+/* ============================================= */
+/* ESTILOS DO TRILHO (CORRIGIDOS PARA O TOGGLE) */
+/* ============================================= */
+.trilho {
+    width: 50px; /* Largura corrigida (era 990px) */
+    height: 26px; /* Altura corrigida (era 30px) */
+    background-color: var(--brand-dark-bg); /* Fundo dinâmico */
+    border: 1px solid var(--brand-gold);
+    border-radius: 13px; /* Corrigido (era 10px) */
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 1rem;
+    margin-right: auto; /* Empurra o menu para a direita */
+}
+
+/* Modo claro: Fundo do trilho usa a cor do card */
+body.light-mode .trilho {
+    background-color: var(--card-bg);
+}
+
+.trilho .indicador {
+    width: 20px; /* Largura corrigida (era 50px) */
+    height: 20px; /* Altura corrigida (era 30px) */
+    background-color: var(--brand-gold); /* Corrigido (era #1FAF59) */
+    border-radius: 50%; /* Corrigido (era 10px) */
+    transform: scale(1); /* Corrigido (era .9) */
+    position: absolute;
+    top: 2px; /* Posição ajustada */
+    left: 3px; /* Posição ajustada */
+    transition: left 0.3s ease;
+}
+
+/* Estado 'dark' (que agora é o modo claro) */
+.trilho.dark .indicador {
+    left: 25px; /* Posição movida para a direita (era 900px) */
+}
+/* ============================================= */
+
+
 .logo img {
     height: 40px;
     width: auto;
 }
 
-/* --- BOTÃO WHATSAPP FLUTUANTE (CORRIGIDO) --- */
+/* --- BOTÃO WHATSAPP FLUTUANTE (O seu código original) --- */
 .whatsapp-flutuante {
-  /* 1. POSICIONAMENTO E FIXAÇÃO */
   position: fixed;
   bottom: 40px; 
   right: 40px; 
-  z-index: 1000; /* Garante que fique por cima de outros elementos */
-  
-  /* 2. FORMA E TAMANHO */
+  z-index: 1000; 
   width: 70px; 
   height: 70px; 
   border-radius: 50%; 
-  
-  /* 3. ESTILO VISUAL */
   background-color: #25d366; 
   color: #FFF; 
   box-shadow: 4px 2px 3px rgba(0, 0, 0, 0.4); 
   text-decoration: none;
-  
-  /* 4. CENTRALIZAÇÃO PERFEITA DO ÍCONE (com Flexbox) */
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 30px; 
-
-  /* 5. TRANSIÇÃO SUAVE */
   transition: background-color 0.3s ease;
 }
 
-/* Efeito ao passar o mouse */
 .whatsapp-flutuante:hover {
   background-color: #1FAF59; 
 }
 
-/* Ajustes para telas menores (celulares) */
 @media (max-width: 600px) {
   .whatsapp-flutuante {
     bottom: 20px;
@@ -133,7 +194,7 @@ h2 {
 }
 
 
-/* Menu Desktop */
+/* Menu Desktop (Atualizado para usar variáveis) */
 .menu-desktop {
     display: none;
     align-items: center;
@@ -147,7 +208,7 @@ h2 {
 }
 
 .menu-desktop a {
-    color: var(--text-white);
+    color: var(--heading-color); /* Alterado (era --text-white) */
     font-weight: 600;
     text-decoration: none;
     transition: color 300ms ease;
@@ -157,10 +218,10 @@ h2 {
     color: var(--brand-gold);
 }
 
-/* Botão Mobile */
+/* Botão Mobile (Atualizado para usar variáveis) */
 .menu-button {
     display: block;
-    color: var(--text-white);
+    color: var(--heading-color); /* Alterado (era --text-white) */
     border: none;
     background: none;
     cursor: pointer;
@@ -172,11 +233,14 @@ h2 {
     height: 24px;
 }
 
-/* Menu Dropdown Mobile */
+/* Menu Dropdown Mobile (Atualizado para usar variáveis) */
 .mobile-menu {
     display: none;
     background-color: var(--brand-brown);
     padding: 0.5rem 1rem;
+}
+body.light-mode .mobile-menu {
+    background-color: var(--card-bg); /* Fundo creme no modo claro */
 }
 
 .mobile-menu.is-open {
@@ -190,6 +254,9 @@ h2 {
     color: var(--text-white);
     text-decoration: none;
     font-weight: 500;
+}
+body.light-mode .mobile-menu a {
+    color: var(--text-dark); /* Texto escuro no modo claro */
 }
 
 .mobile-menu a:hover {
@@ -206,9 +273,15 @@ h2 {
     .logo img {
         height: 56px;
     }
+    /* Posiciona o trilho no menu desktop em telas maiores */
+    .trilho {
+        order: 10; /* Joga para o fim do flex */
+        margin-left: 1.5rem;
+        margin-right: 0;
+    }
 }
 
-/* --- SEÇÃO HERO --- */
+/* --- SEÇÃO HERO (O seu código original) --- */
 .carousel-container {
     position: relative;
     height: 100vh;
@@ -218,6 +291,7 @@ h2 {
 .carousel-track {
     display: flex;
     height: 100%;
+    /* A transição será adicionada pelo JS */
 }
 
 .carousel-slide {
@@ -252,7 +326,7 @@ h2 {
     margin: 1rem 0 2rem;
 }
 
-/* --- SEÇÕES GERAIS --- */
+/* --- SEÇÕES GERAIS (O seu código original) --- */
 .secao {
     padding-top: 4rem;
     padding-bottom: 4rem;
@@ -264,59 +338,67 @@ h2 {
     display: inline-block;
 }
 
-/* --- PRODUTOS --- */
+/* --- PRODUTOS (ATUALIZADO PARA CARROSSEL EM LOOP) --- */
 .produtos-container {
     text-align: center;
 }
 
 .carousel-and-button-wrapper {
     display: flex;
-    flex-direction: column; /* Sempre empilhado (um embaixo do outro) */
+    flex-direction: column;
     align-items: center;
     gap: 2rem;
 }
 
 .carousel-products-wrapper {
     width: 100%;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
-    padding-bottom: 1rem; /* Espaço para a barra de rolagem */
-}
-
-/* ESTILO DA BARRA DE ROLAGEM */
-.carousel-products-wrapper::-webkit-scrollbar {
-    height: 8px; /* Altura da barra */
-}
-.carousel-products-wrapper::-webkit-scrollbar-thumb {
-    background-color: var(--brand-gold); /* Cor da barra */
-    border-radius: 10px;
-}
-.carousel-products-wrapper::-webkit-scrollbar-track {
-    background-color: var(--brand-brown); /* Cor do fundo da barra */
+    overflow: hidden; /* MUDANÇA: Esconde o overflow */
+    /* NOVO: Adiciona um fade nas laterais */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
 }
 
 .grid-produtos {
     display: flex;
-    gap: 1.5rem;
-    width: fit-content;
+    gap: 1.5rem; /* 24px */
+    width: fit-content; 
     padding: 0 1rem;
+    /* NOVO: Animação de loop contínuo */
+    animation: continuous-scroll 25s linear infinite;
 }
+
+/* NOVO: Pausa a animação ao passar o mouse */
+.carousel-products-wrapper:hover .grid-produtos {
+    animation-play-state: paused;
+}
+
+/* NOVO: Keyframes para o loop contínuo */
+@keyframes continuous-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Move o carrossel pela metade do seu comprimento (o comprimento dos clones) */
+        transform: translateX(-50%);
+    }
+}
+
 
 .card-link {
     text-decoration: none;
 }
 
 .card-produto {
-    background-color: var(--brand-brown);
+    background-color: var(--card-bg); /* Alterado */
     padding: 1.5rem;
     border-radius: 0.75rem;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease;
     cursor: pointer;
     flex-shrink: 0;
     width: 280px;
-    scroll-snap-align: start;
+    /* MUDANÇA: Removido scroll-snap-align */
+    color: var(--card-text); /* Adicionado para o texto do card */
 }
 
 .card-produto:hover {
@@ -332,11 +414,17 @@ h2 {
     border: 4px solid var(--brand-gold);
 }
 
-/* --- QUEM SOMOS --- */
+/* --- QUEM SOMOS (Atualizado para Modo Claro) --- */
 #quemsomos {
-    background-color: var(--brand-light);
+    background-color: var(--brand-light); /* Fundo bege claro (padrão) */
     color: var(--brand-brown);
 }
+/* No modo claro, o body já é bege, então esta secção fica creme */
+body.light-mode #quemsomos {
+    background-color: var(--card-bg); /* Fundo creme (#fdfaf5) */
+    color: var(--brand-brown);
+}
+
 
 #quemsomos h2 {
     color: var(--brand-brown);
@@ -355,7 +443,7 @@ h2 {
 .membro-card {
     text-align: center;
     padding: 20px;
-    background-color: #fff;
+    background-color: #fff; /* Mantido branco para destaque */
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
@@ -434,14 +522,16 @@ h2 {
     margin-top: 0;
     margin-bottom: 0.5rem;
 }
+/* --- FIM DA SECÇÃO QUEM SOMOS --- */
 
-/* --- FORMULÁRIOS --- */
+
+/* --- FORMULÁRIOS (Atualizado para usar variáveis) --- */
 .secao-formulario {
     padding: 4rem 0;
 }
 
 .formulario {
-    background-color: var(--brand-brown);
+    background-color: var(--card-bg); /* Alterado */
     padding: clamp(1.5rem, 5vw, 3rem);
     border-radius: 0.75rem;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
@@ -450,12 +540,13 @@ h2 {
     gap: 1.5rem;
     max-width: 768px;
     margin: 0 auto;
+    transition: background-color 0.3s ease;
 }
 
 .formulario label {
     display: block;
     font-weight: 500;
-    color: var(--brand-light);
+    color: var(--card-text); /* Alterado */
     margin-bottom: 0.5rem;
 }
 
@@ -463,11 +554,28 @@ h2 {
     width: 100%;
     padding: 0.75rem;
     border-radius: 0.5rem;
-    border: none;
+    border: 1px solid var(--brand-brown); /* Borda subtil */
     background-color: var(--brand-light);
     color: var(--brand-brown);
     box-sizing: border-box;
 }
+
+/* Modo escuro: inputs ficam mais escuros */
+body:not(.light-mode) .formulario input,
+body:not(.light-mode) .formulario textarea {
+    background-color: var(--brand-dark-bg); /* Fundo do input */
+    color: var(--card-text); /* Texto do input */
+    border: 1px solid var(--brand-gold);
+}
+
+/* Modo claro: inputs ficam bege claro */
+body.light-mode .formulario input,
+body.light-mode .formulario textarea {
+    background-color: var(--brand-light); /* Fundo bege claro */
+    color: var(--text-dark); /* Texto escuro */
+    border: 1px solid var(--brand-gold);
+}
+
 
 .formulario input:focus, .formulario textarea:focus {
     outline: 2px solid var(--brand-gold);
@@ -490,7 +598,7 @@ h2 {
     background-color: #b47f43;
 }
 
-/* --- LOCALIZAÇÃO --- */
+/* --- LOCALIZAÇÃO (Atualizado para modo claro) --- */
 .map-container {
     position: relative;
     padding-bottom: 56.25%;
@@ -509,16 +617,253 @@ h2 {
     width: 100%;
     height: 100%;
     border: 0;
+    transition: filter 0.3s ease;
+}
+/* Inverte as cores do mapa no modo claro */
+body.light-mode .map-container iframe {
+    filter: invert(90%) hue-rotate(30deg); /* Filtro menos agressivo que se ajusta à paleta */
 }
 
-/* --- RODAPÉ --- */
+
+/* ============================================= */
+/* ESTILOS PARA SECÇÃO DE FEEDBACK           */
+/* ============================================= */
+.feedback-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.feedback-card {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: var(--card-text); /* Texto dinâmico */
+}
+
+.feedback-card:hover {
+    transform: translateY(-5px);
+}
+
+.feedback-card .estrelas {
+    font-size: 1.5rem;
+    color: #ffc107; /* Cor da estrela cheia */
+    margin-bottom: 1rem;
+}
+
+.feedback-card .estrelas span {
+    margin: 0 2px;
+}
+/* Cor da estrela vazia (no modo escuro) */
+.feedback-card .estrelas span:last-child:not(:first-child) {
+    color: var(--brand-dark-bg);
+}
+/* Cor da estrela vazia (no modo claro) */
+body.light-mode .feedback-card .estrelas span:last-child:not(:first-child) {
+     color: var(--brand-light);
+}
+
+
+.feedback-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    font-style: italic;
+    color: var(--card-text); /* Texto dinâmico */
+}
+
+.feedback-card h4 {
+    font-size: 1.1rem;
+    color: var(--heading-color); /* Título dinâmico */
+    margin: 0;
+    font-weight: 600;
+}
+
+/* ============================================= */
+/* NOVOS ESTILOS: FORMULÁRIO DE FEEDBACK     */
+/* ============================================= */
+.formulario-feedback-container {
+    max-width: 768px;
+    margin: 4rem auto 0 auto; /* Espaço acima do formulário */
+    padding-top: 3rem;
+    border-top: 1px solid var(--border-color); /* Linha separadora */
+}
+
+/* O h3 está a ser estilizado pela regra global .text-center e h3 */
+.formulario-feedback-container h3 {
+     margin-bottom: 2rem;
+}
+
+/* Container para as estrelas de input */
+.avaliacao-estrelas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem; /* Espaço abaixo das estrelas */
+}
+
+.avaliacao-estrelas label {
+    margin-bottom: 0 !important; /* Anula o margin-bottom do .formulario label */
+    font-weight: 500;
+    color: var(--card-text);
+}
+
+.estrelas-input {
+    display: flex;
+    /* Inverte a ordem para o truque de CSS (~) funcionar corretamente no hover */
+    flex-direction: row-reverse; 
+    justify-content: center;
+}
+
+.estrelas-input span {
+    font-size: 2.5rem; /* Tamanho das estrelas */
+    color: var(--brand-gold);
+    opacity: 0.5; /* Começam semi-transparentes */
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0 0.25rem;
+}
+
+/* Magia do Hover: Acende a estrela e todas as anteriores (à direita, por causa do row-reverse) */
+.estrelas-input span:hover,
+.estrelas-input span:hover ~ span {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Quando um conjunto é 'selecionado' (via JS), resetamos o hover */
+.estrelas-input.selecionado span {
+    opacity: 0.5;
+}
+
+/* E acendemos apenas as estrelas ativas */
+.estrelas-input.selecionado span.ativa {
+     opacity: 1;
+     transform: scale(1); /* Reset o scale do hover */
+}
+
+/* Mensagem de sucesso */
+.feedback-mensagem-sucesso {
+    text-align: center;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    border-radius: 0.5rem;
+    background-color: var(--brand-gold);
+    color: var(--brand-brown);
+    font-weight: 500;
+}
+
+
+/* ============================================= */
+/* ESTILOS PARA PERGUNTAS FREQUENTES (FAQ) */
+/* ============================================= */
+.faq-container {
+    max-width: 768px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.faq-item {
+    background-color: var(--card-bg);
+    border-radius: 0.75rem;
+    /* Usa a cor da borda do modo claro/escuro */
+    border: 1px solid var(--border-color, var(--brand-gold)); 
+    overflow: hidden; /* Importante para a animação */
+    transition: background-color 0.3s ease;
+}
+
+.faq-pergunta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1.5rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    /* Usa a cor de título do modo claro/escuro */
+    color: var(--heading-color); 
+    font-size: 1.125rem;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+}
+
+.faq-pergunta span {
+    flex: 1;
+    padding-right: 1rem;
+}
+
+.faq-icone {
+    width: 20px;
+    height: 20px;
+    color: var(--brand-gold);
+    transition: transform 0.3s ease;
+    flex-shrink: 0; /* Impede que o ícone encolha */
+}
+
+/* Estilo da resposta */
+.faq-resposta {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    /* Usa a cor de texto do modo claro/escuro */
+    color: var(--card-text); 
+}
+
+/* Estilização dos parágrafos dentro da resposta */
+.faq-resposta p {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    margin: 0;
+    line-height: 1.7;
+    /* Garante que o parágrafo dentro da resposta também use a cor de texto correta */
+    color: var(--card-text); 
+}
+
+/* Adiciona espaço entre parágrafos (para as respostas elaboradas) */
+.faq-resposta p + p {
+    margin-top: 1rem;
+    padding-top: 0; /* Remove padding duplicado */
+}
+
+
+/* Estado Ativo/Aberto (controlado pelo JS) */
+.faq-item.active .faq-resposta {
+    max-height: 500px; /* Aumentado para respostas mais longas */
+}
+
+.faq-item.active .faq-icone {
+    transform: rotate(45deg);
+}
+
+
+/* --- RODAPÉ (Atualizado para usar variáveis) --- */
 .rodape {
     background-color: var(--brand-brown);
     text-align: center;
     padding: 2rem 1rem;
     color: var(--brand-light);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
+/* Mudança no modo claro */
+body.light-mode .rodape {
+    background-color: var(--card-bg);
+    color: var(--card-text);
+    border-top: 1px solid var(--brand-light);
+}
+
 
 .rodape p {
     margin: 0.25rem 0;
 }
+

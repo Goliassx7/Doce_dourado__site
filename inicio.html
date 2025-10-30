@@ -2,234 +2,425 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <!-- Meta tag essencial para design responsivo -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doce Dourado - A Magia dos Doces</title>
+    <title>Doce Dourado - Confeitaria Artesanal</title>
 
-    <link rel="icon" type="image/png" href="Imagens/PAO_DE_MEL-removebg-preview.png" sizes="32x32">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Fontes do Google (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- O seu ficheiro CSS -->
     <link rel="stylesheet" href="style.css">
-    <!-- O link para os ícones foi movido para cá para melhor organização -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 <body>
 
+    <!-- CABEÇALHO -->
     <header class="cabecalho">
         <div class="container">
-            <div class="logo">
-                <a href="inicio.html">
-                    <img src="Imagens/LOGO_ESCRITA-removebg-preview.png" alt="Doce Dourado Logo">
-                </a>
-            </div>
             
+            <a href="#" class="logo">
+                <!-- TROQUE PELA SUA LOGO -->
+                <img src="images/LOGO_ESCRITA-removebg-preview.png" alt="Logo Doce Dourado" style="height: 40px; width: auto;">
+            </a>
+
+            <!-- Botão de Tema (Trilho) -->
+            <div id="trilho" class="trilho">
+                <div class="indicador"></div>
+            </div>
+
+            <!-- Menu Desktop -->
             <nav class="menu-desktop">
-                <!-- O botão do WhatsApp foi removido daqui -->
-                <a href="https://www.instagram.com/doce.dourado.oficial?igsh=MW02MWRyZ2o0bjNrcQ%3D%3D&utm_source=qr" target="_blank" class="icone-insta">
-                    <img src="Imagens/logo_insta.png" alt="Instagram">
-                </a>
-                <a href="#inicio">Início</a>
                 <a href="#produtos">Produtos</a>
                 <a href="#quemsomos">Quem Somos</a>
-                <a href="#encomendas">Encomendas</a>
-                <a href="#localizacao">Localização</a>
-                <a href="#feedback">Feedback</a>
+                <a href="#encomenda">Encomendas</a>
+                <a href="#local">Localização</a>
+                <a href="https://www.instagram.com/doce.dourado.oficial/?igsh=MW02MWRyZ2o0bjNrcQ%3D%3D&utm_source=qr#" target="_blank" class="icone-insta">
+                     <!-- TROQUE PELO SEU ÍCONE -->
+                    <img src="images/icons/logo_insta.png" alt="Instagram" style="width: 30px; height: 30px;">
+                </a>
             </nav>
-            
-            <button id="menu-button" class="menu-button">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-            </button>
-        </div>
 
-        <nav id="mobile-menu" class="mobile-menu">
-            <a href="#inicio">Início</a>
-            <a href="#produtos">Produtos</a>
-            <a href="#quemsomos">Quem Somos</a>
-            <a href="#encomendas">Encomendas</a>
-            <a href="#localizacao">Localização</a>
-            <a href="#feedback">Feedback</a>
-        </nav>
+            <!-- Botão Mobile -->
+            <button id="menu-button" class="menu-button">
+                <!-- Ícone de Menu (Hamburger) -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width: 24px; height: 24px;">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>                  
+            </button>
+
+        </div>
     </header>
 
-    <section id="inicio" class="carousel-container">
-        <div class="carousel-track">
-            <div class="carousel-slide" style="background-image: url('Imagens/captura-de-tela-2024-02-19-135533-gj8dmmzejz.webp');">
-                <div class="hero-overlay"></div>
-                <div class="conteudo-principal">
-                    <h1>Bem-vindo à Doce Dourado</h1>
-                    <p>A receita clássica que conquistou corações. Descubra a magia do nosso Pão de Mel!</p>
-                    <a href="https://www.instagram.com/doce.dourado.oficial?igsh=MW02MWRyZ2o0bjNrcQ%3D%3D&utm_source=qr" class="btn">Siga Nossas Redes Sociais</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section id="produtos" class="secao produtos-container">
-        <div class="container">
-            <h2 class="text-center">Nosso Produto</h2>
-            <p class="text-center" style="max-width: 800px; margin-left: auto; margin-right: auto;">
-                Arraste para o lado e experimente a nossa linha exclusiva de Pães de Mel e Doces Dourados. Qualidade e sabor inesquecíveis em cada mordida.
-            </p>
+    <!-- Menu Mobile (Dropdown) -->
+    <nav id="mobile-menu" class="mobile-menu">
+        <a href="#produtos">Produtos</a>
+        <a href="#quemsomos">Quem Somos</a>
+        <a href="#encomenda">Encomendas</a>
+        <a href="#local">Localização</a>
+    </nav>
 
-            <div class="carousel-and-button-wrapper">
-                <div class="carousel-products-wrapper">
-                    <div class="grid-produtos">
-                        <a href="#encomendas" class="card-link">
-                            <div class="card-produto">
-                                <img src="Imagens/captura-de-tela-2024-02-19-135533-gj8dmmzejz.webp" alt="Pão de Mel Tradicional">
-                            </div>
-                        </a>
-                        <a href="#encomendas" class="card-link">
-                            <div class="card-produto">
-                                <img src="Imagens/captura-de-tela-2024-02-19-135533-gj8dmmzejz.webp" alt="Pão de Mel com Chocolate Branco">
-                            </div>
-                        </a>
-                        <a href="#encomendas" class="card-link">
-                            <div class="card-produto">
-                                <img src="Imagens/captura-de-tela-2024-02-19-135533-gj8dmmzejz.webp" alt="Pão de Mel com Nozes">
-                            </div>
-                        </a>
-                        <a href="#encomendas" class="card-link">
-                            <div class="card-produto">
-                                <img src="Imagens/captura-de-tela-2024-02-19-135533-gj8dmmzejz.webp" alt="Pão de Mel Sabor Café">
-                            </div>
-                        </a>
-                        <a href="#encomendas" class="card-link">
-                            <div class="card-produto">
-                                <img src="Imagens/captura-de-tela-2024-02-19-135533-gj8dmmzejz.webp" alt="Outro Sabor Especial">
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <br>
-                <a href="#encomendas" class="btn btn-faca-pedido">FAÇA SEU PEDIDO!</a>
-            </div>
-        </div>
-    </section>
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
 
-    <section id="quemsomos" class="secao">
-        <div class="container">
-            <h2 class="text-center">Nossa Equipe</h2>
-            <div class="equipe-grid">
-                <div class="membro-card">
-                    <img src="Imagens/membros/foto-membro-1.jpeg" alt="Foto de membro" class="foto-membro">
-                    <h3>Giovanna Souza</h3>
-                </div>
-                <div class="membro-card">
-                    <img src="Imagens/membros/foto-membro-2.jpeg" alt="Foto de membro" class="foto-membro">
-                    <h3>Murilo Carriel</h3>
-                </div>
-                <div class="membro-card">
-                    <img src="Imagens/membros/foto-membro-3.jpeg" alt="Foto de Andrew Andrade" class="foto-membro">
-                    <h3>Andrew Andrade</h3>
-                </div>
-                <div class="membro-card">
-                    <img src="Imagens/membros/foto-membro-4.jpeg" alt="Foto de membro" class="foto-membro">
-                    <h3>João Pedro Morais</h3>
-                </div>
-                <div class="membro-card">
-                    <img src="Imagens/membros/foto-membro-5.jpeg" alt="Foto de membro" class="foto-membro">
-                    <h3>Ana Júlia Bulhoes</h3>
-                </div>
-            </div>
-            
-            <div class="quem-somos-wrapper">
-                <div class="texto-quem-somos">
-                    <p>Na <strong>Doce Dourado</strong>, acreditamos que cada mordida deve ser uma experiência única de <strong>carinho</strong> e <strong>sabor</strong>. Somos especializados na produção de pães de mel artesanais, recheados com o melhor doce de leite mineiro, que trazem a autêntica sensação de estar em Minas em cada pedaço. Fundada em 2025, nossa empresa nasceu com a missão de espalhar amor e tradição, levando a doçura de Minas Gerais para cada mesa e criando momentos inesquecíveis.</p>
-                </div>
-                <div class="missoes-valores-container">
-                    <div class="valor-card">
-                        <h3>Missão</h3>
-                        <p>Levar alegria e afeto através de doces artesanais, com foco em ingredientes naturais e preparo dedicado.</p>
-                    </div>
-                    <div class="valor-card">
-                        <h3>Visão</h3>
-                        <p>Tornar-se a marca de Pão de Mel mais querida e reconhecida pela qualidade no mercado regional até 2028.</p>
-                    </div>
-                    <div class="valor-card">
-                        <h3>Valores</h3>
-                        <p>Qualidade, Artesanato, Respeito ao Cliente e Sustentabilidade.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="encomendas" class="secao-formulario">
-        <div class="container">
-            <h2 class="text-center" style="color: var(--brand-gold); border-bottom-color: var(--brand-gold);">Faça Sua Encomenda</h2>
-            
-            <form id="form-encomenda" class="formulario">
+        <!-- SEÇÃO HERO (CARROSSEL) -->
+        <section class="carousel-container">
+            <div class="carousel-track">
                 
-                <div>
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome" required>
-                </div>
-                
-                <div>
-                    <label for="telefone">Telefone (Whatsapp):</label>
-                    <input type="tel" id="telefone" name="telefone" required>
-                </div>
-
-                <div>
-                    <label for="observacao">Observação do pedido e quantidade:</label>
-                    <textarea id="observacao" name="observacao" rows="4"></textarea>
+                <!-- Slide 1 (Exemplo) -->
+                <div class="carousel-slide" style="background-image: url('images/imagem\ teste.webp');">
+                    <div class="hero-overlay"></div>
+                    <div class="conteudo-principal">
+                        <h1>Bem-vindo à Doce Dourado</h1>
+                        <p> Descubra a magia do nosso Pão de Mel!</p>
+                        <a href="https://www.instagram.com/doce.dourado.oficial/?igsh=MW02MWRyZ2o0bjNrcQ%3D%3D&utm_source=qr#" class="btn">Siiga nossas redes sociais</a>
+                    </div>
                 </div>
 
-                <button type="submit">
-                    ENVIAR PEDIDO
-                </button>
-            </form>
-        </div>
-    </section>
+                <!-- Slide 2 (Exemplo) - ADICIONADO PARA O CARROSSEL FUNCIONAR -->
+                <div class="carousel-slide" style="background-image: url('images/imagem\ teste.webp');">
+                    <div class="hero-overlay"></div>
+                    <div class="conteudo-principal">
+                        <h1>Sabor que Conecta, Doçura que Encanta</h1>
+                        <p>A receita clássica que conquistou corações.</p>
+                        <a href="#produtos" class="btn">FVeja nosos produto</a>
+                    </div>
+                </div>
 
-    <section id="localizacao" class="secao" style="background-color: var(--brand-gold); color: var(--brand-brown);">
-        <div class="container text-center">
-            <h2>Onde Nos Encontrar</h2>
-            <p style="font-size: 1.25rem; margin-bottom: 2rem;">Visite nossa cozinha para retirada ou desfrute de nosso serviço de atendimento!</p>
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3096.2794207332117!2d-50.4393575494318!3d-22.649406668313425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94953bdbb97c3ac5%3A0xd61f79976838c175!2sUnesp%20-%20Faculdade%20de%20Ci%C3%AAncias%20e%20Letras%20(FCLAs)!5e0!3m2!1spt-BR!2sbr!4v1759113346404!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Nossa localização na Unesp Assis"></iframe>
             </div>
-            <p style="font-size: 1.125rem; font-weight: 600;">Av. Dom Antônio, 2100 - Parque Universitario, Assis - SP</p>
-            <p style="font-size: 1.125rem; font-weight: 600;">Horário de Funcionamento: </p>
-        </div>
-    </section>
+        </section>
 
-    <section id="feedback" class="secao-formulario">
-        <div class="container">
-            <h2 class="text-center" style="color: var(--brand-gold); border-bottom-color: var(--brand-gold);">Deixe seu Feedback</h2>
-            <form action="#" class="formulario">
-                <div>
-                    <label for="nome-feedback">Nome (opcional):</label>
-                    <input type="text" id="nome-feedback" name="nome-feedback">
+        <!-- SEÇÃO PRODUTOS -->
+        <section id="produtos" class="secao">
+            <div class="container produtos-container">
+                <h2 class="text-center">Nosso Queridinho</h2>
+                <div class="carousel-and-button-wrapper">
+                    <!-- Wrapper do Carrossel (overflow: hidden) -->
+                    <div class="carousel-products-wrapper">
+                        <!-- Grelha com os produtos (animada) -->
+                        <div class="grid-produtos">
+                            
+                            <!-- Card 1 (Exemplo) -->
+                            <a href="#" class="card-link">
+                                <div class="card-produto">
+                                    <img src="images/imagem teste.webp" alt="Brigadeiros">
+                                    
+                                </div>
+                            </a>
+                            
+                            <!-- Card 2 (Exemplo) -->
+                            <a href="#" class="card-link">
+                                <div class="card-produto">
+                                    <img src="images/imagem teste.webp" alt="Bolo de Pote">
+                                
+                                </div>
+                            </a>
+                            
+                            <!-- Card 3 (Exemplo) -->
+                             <a href="#" class="card-link">
+                                <div class="card-produto">
+                                    <img src="images/imagem teste.webp" alt="Copos da Felicidade">
+                                    
+                                </div>
+                            </a>
+                            
+                            <!-- Card 4 (NOVO) -->
+                             <a href="#" class="card-link">
+                                <div class="card-produto">
+                                    <img src="images/imagem teste.webp" alt="Bolo Red Velvet">
+                                    
+                                </div>
+                            </a>
+                            
+                            <!-- Card 5 (NOVO) -->
+                             <a href="#" class="card-link">
+                                <div class="card-produto">
+                                    <img src="images/imagem teste.webp" alt="Cookies Artesanais">
+                                    
+                                </div>
+                            </a>
+                            <!-- Os clones serão adicionados aqui pelo script.js -->
+                        </div>
+                    </div>
+                    <a href="##encomendas" class="btn">Faça sua encomenda</a>
                 </div>
-                <div>
-                    <label for="seu-feedback">Sua Opinião:</label>
-                    <textarea id="seu-feedback" name="seu-feedback" rows="4" required></textarea>
-                </div>
-                <button type="submit">Enviar</button>
-            </form>
-        </div>
-    </section>
+            </div>
+        </section>
 
+        <!-- SEÇÃO QUEM SOMOS (Preservada como no seu CSS) -->
+        <section id="quemsomos" class="secao">
+            <div class="container">
+                <h2 class="text-center">Nossa Equipe</h2>
+                
+                <!-- Grelha da Equipa -->
+                <div class="equipe-grid">
+                    <div class="membro-card">
+                        <img src="images/membros/foto-membro-1.jpeg" alt="Foto do Membro" class="foto-membro">
+                        <h3>Giovanna Souza</h3>
+                        
+                    </div>
+                    <div class="membro-card">
+                        <img src="images/membros/foto-membro-2.jpeg"" alt="Foto do Membro" class="foto-membro">
+                        <h3>Murilo Carriel</h3>
+                        
+                    </div>
+                    <div class="membro-card">
+                        <img src="images/membros/foto-membro-3.jpeg"" alt="Foto do Membro" class="foto-membro">
+                        <h3>Andrew Andrade</h3>
+                        
+                    </div>
+                    <div class="membro-card">
+                        <img src="images/membros/foto-membro-4.jpeg"" alt="Foto do Membro" class="foto-membro">
+                        <h3>João Pedro</h3>
+                        
+                    </div>
+                    <div class="membro-card">
+                        <img src="images/membros/foto-membro-5.jpeg"" alt="Foto do Membro" class="foto-membro">
+                        <h3>Ana Júlia</h3>
+                        
+                    </div>
+                    <!-- Adicione mais membros se necessário -->
+                </div>
+
+                <!-- Wrapper de Missão e Valores -->
+                <div class="quem-somos-wrapper">
+                    <div class="texto-quem-somos">
+                        <p>Na <strong>Doce Dourado</strong>, acreditamos que cada mordida deve ser uma experiência única de <strong>carinho</strong> e <strong>sabor</strong>. Somos especializados na produção de pães de mel artesanais, recheados com o melhor doce de leite mineiro, que trazem a autêntica sensação de estar em Minas em cada pedaço. Fundada em 2025, nossa empresa nasceu com a missão de espalhar amor e tradição, levando a doçura de Minas Gerais para cada mesa e criando momentos inesquecíveis.</p>
+        
+                    <div class="missoes-valores-container">
+                        <div class="valor-card">
+                            <h3>Missão</h3>
+                            <p>Levar alegria e afeto através de doces artesanais, com foco em ingredientes naturais e preparo dedicado.</p>
+                        </div>
+                        <div class="valor-card">
+                            <h3>Visão</h3>
+                            <p>Tornar-se a marca de Pão de Mel mais querida e reconhecida pela qualidade no mercado regional até 2028.</p>
+                        </div>
+                        <div class="valor-card">
+                            <h3>Valores</h3>
+                            <p>Qualidade, Paixão, Respeito ao Cliente e Sustentabilidade.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO DE FEEDBACK -->
+        <section id="feedback" class="secao">
+            <div class="container text-center">
+                <h2>O que nossos clientes dizem</h2>
+                
+                <div class="feedback-grid">
+                    
+                    <!-- Feedback 1 -->
+                    <div class="feedback-card">
+                        <div class="estrelas">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span></span>
+                        </div>
+                        <p>"O melhor pão de mel que já comi! O atendimento foi impecável e a entrega foi super rápida. Recomendo de olhos fechados!"</p>
+                        <h4>- Vitor Paião</h4>
+                    </div>
+                    
+                    <!-- Feedback 2 -->
+                    <div class="feedback-card">
+                        <div class="estrelas">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span></span>
+                        </div>
+                        <p>"Fiz a encomenda para minha familia, e todos os elogiaram os doces. Virei cliente!"</p>
+                        <h4>- Diego Carlos</h4>
+                    </div>
+        
+                    <!-- Feedback 3 -->
+                    <div class="feedback-card">
+                        <div class="estrelas">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span></span>
+                        </div>
+                        <p>"Pão de mel excelente e saboroso."</p>
+                        <h4>- Ana Vitoria</h4>
+                    </div>
+                </div>
+
+                <!-- ============================================= -->
+                <!-- NOVO: FORMULÁRIO DE AVALIAÇÃO -->
+                <!-- ============================================= -->
+                <div class="formulario-feedback-container">
+                    <h3 class="text-center">Deixe sua avaliação</h3>
+                    <!-- Este formulário usa a classe .formulario, mas está dentro de um container próprio -->
+                    <form id="form-feedback" class="formulario">
+                        
+                        <!-- Sistema de Estrelas -->
+                        <div class="avaliacao-estrelas">
+                            <label>Sua nota:</label>
+                            <div class="estrelas-input">
+                                <!-- O data-value é lido pelo JS -->
+                                <span data-value="5">☆</span>
+                                <span data-value="4">☆</span>
+                                <span data-value="3">☆</span>
+                                <span data-value="2">☆</span>
+                                <span data-value="1">☆</span>
+                            </div>
+                            <!-- Input escondido para guardar o valor da nota -->
+                            <input type="hidden" id="avaliacao" name="avaliacao" value="0">
+                        </div>
+
+                        <div>
+                            <label for="nome-feedback">Nome (Opcional)</label>
+                            <input type="text" id="nome-feedback" name="nome-feedback">
+                        </div>
+                        
+                        <div>
+                            <label for="descricao-feedback">Seu feedback</label>
+                            <textarea id="descricao-feedback" name="descricao-feedback" rows="4" required placeholder="Conte-nos o que achou..."></textarea>
+                        </div>
+                        <button type="submit" class="btn">Enviar Avaliação</button>
+                    </form>
+                    <!-- Mensagem de Sucesso (escondida) -->
+                    <div id="feedback-mensagem" class="feedback-mensagem-sucesso" style="display: none;">
+                        Obrigado pelo seu feedback!
+                    </div>
+                </div>
+                <!-- ============================================= -->
+
+            </div>
+        </section>
+
+
+        <!-- SEÇÃO FORMULÁRIO (ENCOMENDA) -->
+        <section id="encomenda" class="secao secao-formulario">
+            <div class="container text-center">
+                <h2 class="text-center">Faça sua Encomenda</h2>
+                <form id="form-encomenda" class="formulario">
+                    <div>
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    <div>
+                        <label for="telefone">Telefone (WhatsApp)</label>
+                        <input type="tel" id="telefone" name="telefone" required>
+                    </div>
+                    
+                    <!-- ============================================= -->
+                    <!-- NOVO: CAMPO DE EMAIL ADICIONADO -->
+                    <!-- ============================================= -->
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="seu.email@exemplo.com">
+                    </div>
+                    <!-- ============================================= -->
+
+                    <div>
+                        <label for="observacao">Seu pedido e observações</label>
+                        <textarea id="observacao" name="observacao" rows="6"></textarea>
+                    </div>
+                    <button type="submit" class="btn">Enviar pedido por WhatsApp</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- SEÇÃO LOCALIZAÇÃO -->
+        <section id="local" class="secao">
+            <div class="container text-center">
+                <h2>Onde nos encontrar</h2>
+                <div class="map-container">
+                    <!-- Coloque o link do Google Maps da sua loja aqui -->
+                    <iframe src=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3096.2794207332117!2d-50.4393575494318!3d-22.649406668313425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94953bdbb97c3ac5%3A0xd61f79976838c175!2sUnesp%20-%20Faculdade%20de%20Ci%C3%AAncias%20e%20Letras%20(FCLAs)!5e0!3m2!1spt-BR!2sbr!4v1759113346404!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECÇÃO DE PERGUNTAS FREQUENTES (FAQ) -->
+        <section id="faq" class="secao">
+            <div class="container text-center">
+                <h2 class="text-center">Perguntas Frequentes</h2>
+                
+                <div class="faq-container">
+                    
+                    <!-- ============================================= -->
+                    <!-- PERGUNTAS FREQUENTES MAIS ELABORADAS -->
+                    <!-- ============================================= -->
+
+                    <!-- Pergunta 1 -->
+                    <div class="faq-item">
+                        <button class="faq-pergunta">
+                            <span>Com quanta antecedência preciso encomendar?</span>
+                            <svg class="faq-icone" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width: 20px; height: 20px;">
+                                <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <div class="faq-resposta">
+                            <p><strong>Para doces simples e bolos de pote:</strong> Pedimos um mínimo de <strong>48 horas</strong> de antecedência.</p>
+                            <p><strong>Para bolos decorados e pedidos maiores (acima de 100 doces):</strong> Recomendamos <strong>7 dias</strong> de antecedência para garantir a disponibilidade de ingredientes e da nossa agenda.</p>
+                            <p><strong>Para eventos (casamentos, festas grandes):</strong> O ideal é entrar em contacto com <strong>1 a 2 meses</strong> de antecedência para uma degustação e planeamento detalhado.</p>
+                        </div>
+                    </div>
+        
+                    <!-- Pergunta 2 -->
+                    <div class="faq-item">
+                        <button class="faq-pergunta">
+                            <span>Vocês fazem entregas? Qual a taxa?</span>
+                            <svg class="faq-icone" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width: 20px; height: 20px;">
+                                <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <div class="faq-resposta">
+                            <p>Sim, fazemos entregas! Cobrimos toda a região de [Sua Cidade/Bairro Principal]. A taxa é calculada automaticamente com base na distância (CEP ou morada) no momento do pedido. Também pode sempre optar por levantar a sua encomenda diretamente no nosso ateliê sem qualquer custo, basta agendar um horário connosco.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Pergunta 3 -->
+                    <div class="faq-item">
+                        <button class="faq-pergunta">
+                            <span>Têm opções para restrições alimentares (sem glúten, sem lactose, vegano)?</span>
+                            <svg class="faq-icone" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width: 20px; height: 20px;">
+                                <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <div class="faq-resposta">
+                            <p>Temos algumas opções! Atualmente, oferecemos [Ex: brigadeiros sem lactose e um bolo vegano de chocolate]. No entanto, é importante notar que <strong>a nossa cozinha não é 100% livre de contaminação cruzada</strong>. Se tiver uma alergia severa (como doença celíaca), infelizmente não podemos garantir total segurança. Por favor, especifique a sua restrição ao encomendar.</p>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 4 (NOVA E MAIS ELABORADA) -->
+                    <div class="faq-item">
+                        <button class="faq-pergunta">
+                            <span>Como funcionam o pagamento e a confirmação do pedido?</span>
+                            <svg class="faq-icone" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width: 20px; height: 20px;">
+                                <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <div class="faq-resposta">
+                            <p>Para confirmar a sua encomenda, pedimos um sinal de <strong>50% do valor total</strong> no momento do pedido. O restante pode ser pago no momento da entrega/levantamento.</p>
+                             <p>Aceitamos [Pix, Cartão de Crédito (via link de pagamento), MB Way, etc.]. O seu pedido só é considerado <strong>confirmado</strong> e entra na nossa agenda de produção após a verificação do pagamento do sinal.</p>
+                        </div>
+                    </div>
+                    <!-- ============================================= -->
+        
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- BOTÃO WHATSAPP FLUTUANTE -->
+    <a href="https://wa.me/18996993086" class="whatsapp-flutuante" target="_blank" aria-label="Fale conosco pelo WhatsApp">
+        <!-- Ícone do WhatsApp (Exemplo com SVG, pode trocar por <img> ou Font Awesome) -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="width: 30px; height: 30px; fill: white;">
+            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 .3c88.4 0 160.1 71.8 160.1 160.1 0 48.4-21.3 92-55.4 122.7l-29.6 25.4-3.1 5.2-17.7 30.1-30.9-8.1-25.4-15.1c-31.1 18.4-66.7 28-103.7 28-88.4 0-160.1-71.8-160.1-160.1s71.8-160.1 160.1-160.1zM223.9 111c-26.2 0-47.5 21.3-47.5 47.5s21.3 47.5 47.5 47.5 47.5-21.3 47.5-47.5-21.3-47.5-47.5-47.5zm-58.3 144.5c-6.1 14.9-10 29.4-12.3 43.1-2.9 17.3-3.6 34.9-3.6 52.8 0 88.4 71.8 160.1 160.1 160.1 39.8 0 77-14.7 105.6-39.2l-29.6-25.4c-22.5 15.1-49.4 23.5-78.2 23.5-62.9 0-114-51.1-114-114 0-15.1 3.1-29.6 8.9-43.1l-25.4-15.1 15.1-25.4 25.4-15.1z"/>
+        </svg>
+    </a>
+
+    <!-- RODAPÉ -->
     <footer class="rodape">
         <div class="container">
-            <p>© 2025 Doce Dourado.</p>
-            <p>Todos os direitos reservados aos alunos do 4°semestre de Gestão da Tecnologia da Informação e Gestão Comercial da FATEC Assis.</p>
-            <p>Feito com paixão em Assis, SP.</p>
+            <p>Doce Dourado Confeitaria &copy; 2025</p>
+            <p>Todos os direitos reservados.</p>
         </div>
     </footer>
-    
+
+    <!-- O seu ficheiro JavaScript -->
     <script src="script.js"></script>
 
-    <!-- O botão foi movido para cá, para fora do cabeçalho, garantindo o posicionamento correto -->
-    <a 
-        href="https://wa.me/18996993086" 
-        class="whatsapp-flutuante" 
-        target="_blank"
-        aria-label="Fale conosco pelo WhatsApp"
-    >
-        <i class="fa fa-whatsapp"></i>
-    </a>
 </body>
 </html>
+
