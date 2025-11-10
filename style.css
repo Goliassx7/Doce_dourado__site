@@ -20,7 +20,7 @@ body.light-mode {
     --brand-dark-bg: #e0d1b6; /* Fundo principal (bege claro da paleta) */
     --card-bg: #fdfaf5; /* Fundo dos cards (creme muito claro) */
     --card-text: #4a2c1a; /* Texto (marrom escuro) */
-    --heading-color: #fdfaf5; /* Títulos (marrom escuro) */
+    --heading-color: #fcfcfc; /* Títulos (marrom escuro) */
     --border-color: #9b672a;
 }
 /* ============================================= */
